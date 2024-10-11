@@ -11,7 +11,7 @@ export default function AboutSection() {
               Sou um desenvolvedor focado em JavaScript, com habilidades
               práticas em frameworks modernos como React.js, React Native e
               Next.js. Tenho aprimorado minhas habilidades através do meu
-              estágio atual, projetos pessoais e acadêmicos, sempre focando em
+              emprego atual, projetos pessoais e acadêmicos, sempre focando em
               soluções eficientes para front-end e mobile. Gosto de colaborar em
               equipes ágeis, utilizando metodologias como Scrum e Kanban,
               buscando sempre inovação e resultados concretos. Fora da
