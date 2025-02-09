@@ -4,22 +4,18 @@ interface Project {
   title: string;
   desc: string;
   language: string;
-  url: string; // Adicionado o campo url
+  url: string;
 }
 
 interface GitHubRepo {
   name: string;
   description: string | null;
   language: string | null;
-  html_url: string; // Adicionado o campo html_url
+  html_url: string;
 }
 
-const useGitHubProjects = (categories: { [key: string]: string[] }) => {
-  const [projects, setProjects] = useState<{ [key: string]: Project[] }>({
-    web: [],
-    mobile: [],
-    backend: [],
-  });
+const useGitHubProjects = (projectNames: string[]) => {
+  const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
@@ -30,29 +26,14 @@ const useGitHubProjects = (categories: { [key: string]: string[] }) => {
         );
         const data: GitHubRepo[] = await response.json();
 
-        const filteredProjects: { [key: string]: Project[] } = {
-          web: [],
-          mobile: [],
-          backend: [],
-        };
-
-        data.forEach((repo) => {
-          const project: Project = {
+        const filteredProjects = data
+          .filter(repo => projectNames.includes(repo.name))
+          .map(repo => ({
             title: repo.name,
             desc: repo.description || "No description provided",
             language: repo.language || "language stack unknown",
-            url: repo.html_url, // Atribuição da url
-          };
-
-          // Verifique se o nome do repositório está nas listas de categorias
-          if (categories.web.includes(repo.name)) {
-            filteredProjects.web.push(project);
-          } else if (categories.mobile.includes(repo.name)) {
-            filteredProjects.mobile.push(project);
-          } else if (categories.backend.includes(repo.name)) {
-            filteredProjects.backend.push(project);
-          }
-        });
+            url: repo.html_url,
+          }));
 
         setProjects(filteredProjects);
       } catch (error) {
@@ -62,8 +43,8 @@ const useGitHubProjects = (categories: { [key: string]: string[] }) => {
       }
     };
 
-    fetchProjects(); // Chama a função para buscar os projetos
-  }, []); // Array de dependências vazio para rodar apenas uma vez
+    fetchProjects();
+  }, [projectNames]);
 
   return { projects, loading };
 };

@@ -17,17 +17,43 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: #0f172a;
+  color: #f8fafc;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+a {
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #60a5fa;
+}
+
+button {
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+  background: #2563eb;
+  color: #f3f4f6;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* Estilos comuns */
+.gradient-bg {
+  background: linear-gradient(135deg, #1e40af 0%, #3730a3 100%);
+}
+
+.card-bg {
+  background: #1e293b;
+}
+
+.hover-gradient:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
 }

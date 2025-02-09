@@ -2,22 +2,28 @@ import { Code, GraduationCap, Briefcase, Languages } from "lucide-react";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-20 bg-gray-800">
+    <section id="about" className="py-20 bg-slate-900">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-12 text-center">Sobre mim</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center text-slate-200">Sobre mim</h2>
         <div className="flex flex-col lg:flex-row gap-12">
           <div className="lg:w-2/3">
             <p className="text-lg mb-8">
-              Sou um desenvolvedor focado em JavaScript, com habilidades
-              práticas em frameworks modernos como React.js, React Native e
-              Next.js. Tenho aprimorado minhas habilidades através do meu
-              emprego atual, projetos pessoais e acadêmicos, sempre focando em
-              soluções eficientes para front-end e mobile. Gosto de colaborar em
-              equipes ágeis, utilizando metodologias como Scrum e Kanban,
-              buscando sempre inovação e resultados concretos. Fora da
-              tecnologia, sou apaixonado por ciclismo, música e vôlei, hobbies
-              que me ajudam a manter a criatividade em alta e o equilíbrio entre
-              trabalho e vida pessoal.
+              Sou um desenvolvedor de software que está sempre em busca de novos
+              desafios. Possuo cerca de 2 anos de experiência, tenho adiquirido
+              conhecimentos no desenvolvimento front-end e mobile, com foco em
+              tecnologias como React.js, React Native e Next.js. Minha
+              experiência abrange desde a criação de interfaces de usuário
+              intuitivas e responsivas até o desenvolvimento de aplicativos
+              móveis completos. Possuo um sólido conhecimento em JavaScript e
+              TypeScript, além de experiência com bancos de dados como MySQL e
+              PostgreSQL. Habilidades Linguagens: JavaScript, TypeScript
+              Frameworks/Bibliotecas: React.js, React Native, Next.js, Redux,
+              React Router, React Navigation Bancos de dados: MySQL, PostgreSQL,
+              Oracle Ferramentas: Docker, Jest, React Testing, Tailwind CSS e
+              Styled Components Conceitos: Componentização, Consumo de API1s,
+              Hooks, Gerenciamento de estado, Roteamento, SSR, Testes,
+              Otimização de desempenho. Se tiver interesse em conversar, estou à
+              disposição!
             </p>
             <h3 className="text-2xl font-semibold mb-4 flex items-center">
               <Code className="mr-2" /> Skills
@@ -36,7 +42,7 @@ export default function AboutSection() {
               ].map((skill, index) => (
                 <div
                   key={index}
-                  className="bg-gray-700 rounded-full px-4 py-2 text-center"
+                  className="bg-slate-800 border border-slate-700 rounded-full px-4 py-2 text-center text-slate-300"
                 >
                   {skill}
                 </div>
